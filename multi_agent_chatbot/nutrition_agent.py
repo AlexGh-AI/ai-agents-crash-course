@@ -1,5 +1,10 @@
 import os
 from pathlib import Path
+################################ THIS IS OUR MULTI-AGENT PRODUCTION READY NUTRITION AGENT
+################ IT INCLUDES GUARDRAILS(Input only), AUTHENTICATION, MCP(Exa Web Search), 
+################ RAG(Chroma) and inter-agent HANDOFFS
+#############################################################################################
+
 
 import chromadb
 from agents import (

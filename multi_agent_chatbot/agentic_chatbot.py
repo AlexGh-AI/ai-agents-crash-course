@@ -1,5 +1,16 @@
 import os
-
+##################################################################################################
+# This is our chainlit Chatbot UI. It uses the production ready(guardrails,Authentication) 
+# multi-agentic nutrition agent and meal advisor of nutrition_agent.py in this multi_agent_chatbot
+# folder.
+##################################################################################################
+# NOTE: Due to deployment issues to Render.com with the original requirements.txt caused by the 
+# pinned package versions in it, i used claude's help to minimize the entries and not specifying 
+# package versions. Render deployment error logs state that Render is using Python 3.14 (python3.14) 
+# which is too new and bleeding edge. pydantic_core can't build because it needs Rust/Cargo and 
+# the filesystem is read-only on Render.
+# You need to force Render to use Python 3.11 or 3.12. 
+##################################################################################################
 import chainlit as cl
 import dotenv
 from agents import InputGuardrailTripwireTriggered, Runner, SQLiteSession
