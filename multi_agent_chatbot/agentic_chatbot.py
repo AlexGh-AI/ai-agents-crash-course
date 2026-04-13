@@ -56,11 +56,14 @@ async def on_message(message: cl.Message):
         ):
             with cl.Step(name=f"{event.data.item.name}", type="tool") as step:
                 step.input = event.data.item.arguments
-                print(
-                    f"\nTool call: {
-                        event.data.item.name} with args: {
-                        event.data.item.arguments}"
-                )
+                tool_name = event.data.item.name
+                tool_args = event.data.item.arguments
+                print(f"\nTool call: {tool_name} with args: {tool_args}")
+                # print(
+                #     f"\nTool call: {
+                #         event.data.item.name} with args: {
+                #         event.data.item.arguments}"
+                # ) # commented because of deploy error with python 3.11 based on Claude's suggestion
 
     await msg.update()
 
